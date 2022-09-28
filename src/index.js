@@ -2,7 +2,7 @@ import './style.css';
 
 
 function cim(e){
-    document.getElementById('kep').src = e.currentTarget.value;;
+    document.getElementById('kep').src = e.currentTarget.value;
 }
 
 function szel(e){
@@ -10,11 +10,11 @@ function szel(e){
 }
 
 function vast(e){
-    document.getElementById('kep').style.borderImageWidth = e.currentTarget.value;
+    document.getElementById('kep').style.border = e.currentTarget.value +"px solid"+ document.getElementById('szin').value
 }
 
 function szin(e){
-    document.getElementById('kep').style.borderImageColor = e.currentTarget.value;
+    document.getElementById('kep').style.borderColor = e.currentTarget.value;
 }
 
 
@@ -28,9 +28,9 @@ function sotet(){
 function init(){
     document.getElementById('darkmode').addEventListener('click', sotet);
     document.getElementById('url').addEventListener('change',cim);
-    document.getElementById('szelesseg').addEventListener('change',szel);
-    document.getElementById('vastagsag').addEventListener('change',vast);
-    document.getElementById('szin').addEventListener('change',szin);
+    document.getElementById('szelesseg').addEventListener('input',szel);
+    document.getElementById('vastagsag').addEventListener('input',vast);
+    document.getElementById('szin').addEventListener('input',szin);
 }
 
 document.addEventListener('DOMContentLoaded', init);
